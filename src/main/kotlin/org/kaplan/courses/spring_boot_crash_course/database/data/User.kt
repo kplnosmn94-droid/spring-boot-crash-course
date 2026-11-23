@@ -1,0 +1,12 @@
+package org.kaplan.courses.spring_boot_crash_course.database.data
+
+import org.bson.types.ObjectId
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
+
+@Document(collection = "users")
+data class User(
+    val email: String,
+    val hashedPassword: String,
+    @Id val id: ObjectId = ObjectId(),
+)
